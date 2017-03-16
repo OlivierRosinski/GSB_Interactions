@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('accueil');
 });
+
+//Routes pour la connexion utilisateur
+Route::get('/getLogin', 'VisiteurController@getLogin');
+Route::post('/login', 'VisiteurController@connect');
+Route::get('/getLogout', 'VisiteurController@signOut');
+
+Route::get('/getMedicaments', 'MedicamentController@getListeMedicament');
+Route::get('/getListeInteraction/{idM}', 'MedicamentController@getListeInteraction');
