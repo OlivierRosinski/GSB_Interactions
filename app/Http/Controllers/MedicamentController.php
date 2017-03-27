@@ -23,4 +23,11 @@ class MedicamentController extends Controller {
         $lesInteractions = $interagir->getListeInteraction($idM);
         return view('listeInteraction', compact('lesInteractions'));
     }
+    
+    public function getFormInteraction($idA,$idB) {
+        $medicament = new Medicament();
+        $medicamentA = $medicament->getMedicament($idA);
+        $medicamentB = $medicament->getMedicament($idB);
+        return view('formMedicament', compact('medicamentA','medicamentB'));
+    }
 }

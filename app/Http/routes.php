@@ -22,3 +22,4 @@ Route::get('/getLogout', 'VisiteurController@signOut');
 
 Route::get('/getMedicaments', 'MedicamentController@getListeMedicament');
 Route::get('/getListeInteraction/{idM}', 'MedicamentController@getListeInteraction');
+Route::get('/getFormInteraction/{idA}/{idB}', 'MedicamentController@getFormInteraction');

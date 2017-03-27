@@ -21,6 +21,14 @@ class Medicament extends Model {
         'prix_echantillon',
     ];
     
+    public function getMedicament($idM){
+        $medicament = DB::table('medicament')
+                ->Select()
+                ->where('id_medicament','=',$idM)
+                ->first();
+        return $medicament;
+    }
+
     
     public function getListeMedicament(){
         $lesMedicaments = DB::table('medicament')

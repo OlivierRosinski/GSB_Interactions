@@ -19,12 +19,10 @@ class Interagir extends Model {
     
     public function getListeInteraction($idM){
         $lesInteractions = DB::table('interagir')
-                ->Select()     
-                ->join('medicament', function($join) {
-                    $join->on('interagir.id_medicament', '=', 'medicament.id_medicament');
-                    $join->on('interagir.med_id_medicament', '=', 'medicament.id_medicament');
-                })
-                ->where('medicament.id_medicament','=', $idM)
+                ->Select('m1.nom_commercial AS medicamentA','m2.nom_commercial AS medicamentB','interagir.id_medicament AS idA','interagir.med_id_medicament AS idB')     
+                ->join('medicament AS m1', 'interagir.id_medicament', '=', 'm1.id_medicament')
+                ->join('medicament AS m2', 'interagir.med_id_medicament', '=', 'm2.id_medicament')
+                ->where('interagir.id_medicament','=', $idM)
                 ->get();
         return $lesInteractions;
     }
