@@ -28,6 +28,14 @@ class Medicament extends Model {
                 ->first();
         return $medicament;
     }
+    
+    public function getNomMedicament($idM){
+        $medicament = DB::table('medicament')
+                ->Select('nom_commercial')
+                ->where('id_medicament','=',$idM)
+                ->first();
+        return $medicament;
+    }
 
     
     public function getListeMedicament(){

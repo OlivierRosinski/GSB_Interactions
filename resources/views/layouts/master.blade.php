@@ -33,9 +33,9 @@
 
     </head>
 
-    <body onLoad="pass();">
+    <body>
         <div class="brand">
-            <a href="{{url('/accueil')}}"><img src="{{URL::asset('assets/img/gsb.png')}}" alt="Logo GSB" height="123" width="200s"></a>
+            <a href="{{url('/')}}"><img src="{{URL::asset('assets/img/gsb.png')}}" alt="Logo GSB" height="123" width="200s"></a>
             GSB | <small>Interactions</small></div>
         <!-- Navigation -->
         <nav class="navbar navbar-default" role="navigation">
@@ -63,7 +63,7 @@
                         <hr>
                         <ul class="nav navbar-nav">
                             <li><a href="{{url('/getMedicaments')}}" data-toggle="collapse" data-target=".navbar-collapse.in" class="">Lister médicaments</a></li>
-                            <li><a href="{{url('/getPageConference')}}" data-toggle="collapse" data-target=".navbar-collapse.in" class="">Ajouter</a></li>
+                            <li><a href="{{url('/ajouterInteraction')}}" data-toggle="collapse" data-target=".navbar-collapse.in" class="">Ajouter</a></li>
                         </ul>
                         @endif
                     </ul>

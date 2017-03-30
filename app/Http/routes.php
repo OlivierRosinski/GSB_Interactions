@@ -22,4 +22,8 @@ Route::get('/getLogout', 'VisiteurController@signOut');
 
 Route::get('/getMedicaments', 'MedicamentController@getListeMedicament');
 Route::get('/getListeInteraction/{idM}', 'MedicamentController@getListeInteraction');
-Route::get('/getFormInteraction/{idA}/{idB}', 'MedicamentController@getFormInteraction');
+Route::get('/modifierInteraction/{idA}/{idB}', 'MedicamentController@modifierInteraction');
+Route::get('/ajouterInteraction', 'MedicamentController@ajouterInteraction');
+Route::get('/supprimerInteraction/{idA}/{idB}', 'MedicamentController@supprimerInteraction');
+Route::post('/postAjouterInteraction', 'MedicamentController@postAjouterInteraction');
+Route::post('/postModifierInteraction', 'MedicamentController@postModifierInteraction');

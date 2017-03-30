@@ -2,13 +2,20 @@
 @section('content')
 
 <br><br> <br><br> 
-<h1>Liste des interactions du médicament</h1>
+@if(isset($message))
+<div class="alert alert-info alert-dismissable fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <p>{{$message}}</p>
+</div>
+@endif
+<h1 class='text-center'>Liste des interactions du médicament {{$nomMedicament->nom_commercial}}</h1>
+@if($lesInteractions != null)
 <div class="col-md-offset-1 col-md-10">
-    <table class="table table-striped listeFiltree">
+    <table class="table table-striped listeMedicament">
         <thead>
             <tr>
-                <td><center> Interactions entre les médicaments </center></td>
-        <td><center> Option </center></td>
+                <td> Interactions entre les médicaments </td>
+        <td> Option </td>
         </tr>
         </thead>
         <tbody>
@@ -18,11 +25,12 @@
                 <td></td>
             </tr>
             <tr height='20'>
-                <td><center>{{$uneInteraction ->  medicamentA }} réagis avec {{$uneInteraction ->  medicamentB }}</center></td>
-    <td><center> <a href="{{url('/getFormInteraction/'.$uneInteraction ->  idA . '/' . $uneInteraction ->  idB )}}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a> <a href="{{url('')}}"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></center></td>                    
+                <td>{{$uneInteraction ->  medicamentA }} réagis avec {{$uneInteraction ->  medicamentB }}</td>
+        <td> <a href="{{url('/modifierInteraction/'.$uneInteraction ->  idA . '/' . $uneInteraction ->  idB )}}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a> <a href="{{url('/supprimerInteraction/'.$uneInteraction ->  idA . '/' . $uneInteraction ->  idB )}}"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></td>                    
         </tr>
         @endforeach
         </tbody>
     </table>   
 </div>
+@endif
 @stop
